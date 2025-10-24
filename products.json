@@ -1,0 +1,75 @@
+[
+  {
+  "id": "kronos",
+  "name": "KRONOS",
+  "price": 155000,
+  "image": "images (32).jpeg"
+  
+},
+{
+  "id": "kimix",
+  "name": "KIMIX",
+  "price": 127500,
+  "image": "images (31).jpeg"
+},
+{
+  "id": "acrylic",
+  "name": "ACRYLIC 250KGS",
+  "price": 475000,
+  "image": "images (19).jpeg"
+},
+{
+  "id": "mergal",
+  "name": "MERGAL",
+  "price": 122500,
+  "image": "images (30).jpeg"
+},
+{
+  "id": "silicate",
+  "name": "SILICATE",
+  "price": 125000,
+  "image": "images (29).jpeg"
+},
+{
+  "id": "texanol",
+  "name": "TEXANOL",
+  "price": 1200000,
+  "image": "images (22).jpeg"
+},
+{
+  "id": "Yellow oxide",
+  "name": "YELLOW OXIDE",
+  "price": 70000,
+  "image": "industrial-packaging-zjup-iron-oxide-yellow-pigment-kg-sack-used-as-colorant-construction-paints-coatings-cement-mortars-399438054.jpg"
+},
+{
+  "id": "Red oxide",
+  "name": "RED OXIDE",
+  "price": 70000,
+  "image": "images (24).jpeg"
+},
+{
+  "id": "Blue oxide",
+  "name": "BLUE OXIDE",
+  "price": 85000,
+  "image": "images (25).jpeg"
+},
+{
+  "id": "Black oxide",
+  "name": "BLACK OXIDE",
+  "price": 70000,
+  "image": "images (26).jpeg"
+},
+{
+  "id": "Green oxide",
+  "name": "GREEN OXIDE",
+  "price": 75000,
+  "image": "lima-peru-april-zjup-iron-oxide-green-pigment-industrial-bag-kg-industrial-packaging-zjup-iron-oxide-green-pigment-kg-sack-399438059.jpg"
+},
+{
+  "id": "bermocoll",
+  "name": "BERMOCOLL",
+  "price": "240000",
+  "image": "download (1).jpeg"
+}
+]
