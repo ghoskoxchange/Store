@@ -1,310 +1,55 @@
-/* -----------------------------------
-   Global Reset
------------------------------------ */
-* {
-  box-sizing: border-box;
+body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f7fc;
+  color: #1a1a1a;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f6f6f6;
-  color: #222;
-  transition: transform 0.4s ease;
-  overflow-x: hidden;
-}
-
-/* -----------------------------------
-   Container
------------------------------------ */
-.container {
-  width: 1200px;
-  max-width: 95vw;
-  margin: auto;
-  padding: 20px;
-  transition: transform 0.5s ease;
-}
-
-/* -----------------------------------
-   Header
------------------------------------ */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-header h2 {
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
-.icon-cart {
-  position: relative;
-  cursor: pointer;
-}
-
-.icon-cart svg {
-  width: 32px;
-  height: 32px;
-  color: #333;
-}
-
-.icon-cart span {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 22px;
-  height: 22px;
-  background-color: #e63946;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* -----------------------------------
-   Product Grid (4 per row)
------------------------------------ */
-.listProduct {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.listProduct .item {
-  background-color: #fff;
-  padding: 14px;
-  border-radius: 14px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  text-align: center;
-}
-
-.listProduct .item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.listProduct .item img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.listProduct .item h2 {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 6px;
-}
-
-.listProduct .item .price {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.listProduct .item button {
-  background-color: #111;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
-}
-
-.listProduct .item button:hover {
-  background-color: #333;
-}
-
-/* -----------------------------------
-   Cart Tab (Full Height, Motion)
------------------------------------ */
-.cartTab {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 380px;
-  background-color: #2b2b2b;
-  color: #fff;
-  display: grid;
-  grid-template-rows: 70px 1fr 70px;
-  transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  z-index: 1001;
-  overflow-y: auto;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-}
-
-body.showCart .cartTab {
-  transform: translateX(0);
-}
-
-/* Background overlay for focus */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(3px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 1000;
-}
-
-body.showCart .overlay {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* When cart opens, slightly dim background */
-body.showCart .container {
-  transform: none; /* prevent shift */
-}
-.lowerButton button{
-  border: none;
-  background-color: whitesmoke;
-  color: #000000;
-}
-.lowerButton{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-}
-.lowerButton .lowerCart span{
-  background-color: red;
+header, footer {
+  background-color: #001f3f;
   color: white;
-  border-radius: 50%;
-  width: 20px;
-  font-weight: 600;
-  font-size: 15px;
-  align-items: center;
-  justify-content: center;
-  left: -7px;
-  bottom: 18px;
-  position: relative;
-}
-
-/* Cart Header */
-.cartTab h1 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  padding: 20px;
-  background-color: #1e1e1e;
-  margin: 0;
-}
-
-/* Cart Items */
-.cartTab .listCart {
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.cartTab .listCart .item {
-  display: grid;
-  grid-template-columns: 60px 1fr 70px 60px;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cartTab .listCart .item img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.cartTab .listCart .name {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.cartTab .listCart .totalPrice {
-  font-size: 0.9rem;
-  color: #ddd;
-}
-
-.listCart .quantity span {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  background-color: #fff;
-  color: #333;
-  border-radius: 5px;
-  line-height: 25px;
+  padding: 10px 20px;
   text-align: center;
-  font-weight: bold;
-  cursor: pointer;
 }
 
-.listCart .quantity span:nth-child(2) {
-  background-color: transparent;
-  color: #fff;
-  cursor: default;
+header a, footer a {
+  color: #7FDBFF;
+  margin: 0 5px;
+  text-decoration: none;
 }
 
-/* Cart Buttons */
-.cartTab .button {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.auth-container, .contact-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.cartTab .button button {
+input, textarea, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #0074D9;
+  color: white;
   border: none;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
 }
 
-.cartTab .button .close {
-  background-color: #e63946;
-  color: #fff;
+button:hover {
+  background-color: #005fa3;
 }
 
-.cartTab .button .checkOut {
-  background-color: #06d6a0;
-  color: #222;
-}
-
-.cartTab .button button:hover {
-  filter: brightness(0.9);
-}
-
-/* -----------------------------------
-   Responsive: Mobile view
------------------------------------ */
-@media (max-width: 768px) {
-  .listProduct {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .cartTab {
-    width: 100%; /* ✅ Full width on mobile */
-    transform: translateX(100%);
-  }
-
-  body.showCart .cartTab {
-    transform: translateX(0);
-  }
-
-  /* Don’t move the container */
-  body.showCart .container {
-    transform: none;
-  }
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }

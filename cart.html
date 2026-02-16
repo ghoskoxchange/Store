@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Elite Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/cart.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <a href="index.html">Continue Shopping</a>
+  </header>
+
+  <main>
+    <section id="cart-items">
+      <!-- Cart items will appear here -->
+    </section>
+
+    <section id="checkout">
+      <h3>Total: ₦<span id="total">0</span></h3>
+      <form id="checkout-form">
+        <textarea id="delivery-address" placeholder="Enter your delivery address" required></textarea>
+        <button type="submit">Proceed to Payment</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
